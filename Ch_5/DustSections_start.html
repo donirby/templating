@@ -25,7 +25,19 @@
         </script>
     </head>
     <body>
-
+        <script type="text/x-template" id="itemTemplate">
+          <div>{company} Employees:</div>
+          {#employees prefix="Name"}
+            <div class="itemTemplateWrapper">
+              <div>{prefix}: {name}</div>
+              <div>{title}</div>
+              <div>{email}</div>
+              <div>{phone}</div>
+            </div>
+          {:else}
+          	<div>There are no employees</div>
+          {/employees}
+        </script>
         <h1>Sections in Templates with Dust.js</h1>
 
         <!-- This is the container where the templates will be instantiated -->

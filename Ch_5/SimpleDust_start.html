@@ -8,8 +8,10 @@
          function renderTemplates(e) {
             // this gives us a compiled template registered with Dust as "myTmpl"
             var templContent = document.getElementById('itemTemplate').innerHTML;
+            var dataTemplate = dust.compile(templContent, "myTmpl");
 
             // load the template into the Dust cache
+            dust.loadSource(dataTemplate);
 
             var dataObj = {
                "name" : "Henry Handsome",
@@ -19,6 +21,9 @@
                "fulltime" : true
             };
 
+            dust.render("myTmpl", dataObj, function (err, res) {
+              document.getElementById('container').innerHTML = res;
+            });
          }
 
          window.addEventListener("load", renderTemplates);

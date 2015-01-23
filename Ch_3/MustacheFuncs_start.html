@@ -15,7 +15,14 @@
                     { name: "product 4", price: 415.00 }
                 ]
             };
-            // define the function
+            prodData.total = function() {
+                return Math.round((this.price * 1.08) * 100) / 100;
+            };
+            prodData.decorate = function () {
+	            return function(text, render) {
+	            		return "<u>" + render(text) + "</u>";
+	            };
+            };
 
             var result = Mustache.render(template, prodData );
             $("#container").html(result);
@@ -26,7 +33,8 @@
         <script type="text/template" id="itemTemplate">
             <div class="itemTemplateWrapper">
                 {{#items}}
-                <div><span>Item: </span><span>{{name}}</span></div>
+                <div><span>Item: </span>{{#decorate}}<span>{{name}}</span>{{/decorate}}</div>
+                <div><span>Price: </span><span>{{total}}</span></div>
                 {{/items}}
             </div>
         </script>

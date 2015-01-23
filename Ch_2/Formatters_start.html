@@ -7,7 +7,9 @@
         <script type="text/javascript" src="../jquery.loadTemplate-1.4.4.js"></script>
         <script type="text/javascript">
          $("document").ready(function() {
-           // define the formatter
+            $.addTemplateFormatter("UpperCaseFormatter", function(value, options) {
+               return value.toUpperCase();
+            });
 
             // load the template from the external file
             $("#container").loadTemplate("templateFormat.html", [{

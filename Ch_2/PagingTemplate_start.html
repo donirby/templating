@@ -17,6 +17,8 @@
          }         
 
          function renderTemplates(data, pageNo) {
+            $("#container").loadTemplate($("#itemTemplate"), data["employees"], 
+                    {paged: true, pageNo: pageNo, elemPerPage: 1});
          }
 
          window.addEventListener("load", function(e) {

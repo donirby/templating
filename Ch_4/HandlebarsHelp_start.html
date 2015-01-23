@@ -7,7 +7,12 @@
         <script type="text/javascript" src="../handlebars-v2.0.0.js"></script>
         <script type="text/javascript">
          $("document").ready(function() {
-           // register the helper
+            Handlebars.registerHelper("prodQuantity", function (prodData) {
+                if (prodData.quantity >= 100)
+                  return "We currently have a large amount in stock.";
+                else
+                  return "Hurry! We don't have many left in stock";    
+            });
             
             var template = $("#itemTemplate").html();
             // Handlebars compiles the template into a callable function
@@ -19,7 +24,7 @@
                "data" : {
                    "price" : 895.99,
                    "inStock" : true,
-                   "quantity" : 100
+                   "quantity" : 10
                }
             });
 
@@ -28,7 +33,19 @@
         </script>
     </head>
     <body>
-
+        <script type="text/x-handlebars-template" id="itemTemplate">
+            <div class="itemTemplateWrapper">
+                <div><span>Item: </span><span>{{item}}</span></div>
+                <div><span>Description: </span><span>{{description}}</span></div>
+                {{#with data}}
+                    <div><span>Price: </span><span>{{price}}</span></div>
+                    {{#unless inStock}}
+                        <div><span>We are currently out of this item.</span></div>
+                    {{/unless}}
+                {{/with}}
+                <div>{{prodQuantity data}}</div>
+            </div>
+        </script>
         <h1>Conditionals and Loops in Templates with Handlebars JS</h1>
         <h3>Handlebars has support for basic logic built in.</h3>
 

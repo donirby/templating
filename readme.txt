@@ -1,6 +1,9 @@
 2015/01/23
 JavaScript Templating with Joe Marini
-http://www.lynda.com/sdk/Underscorejs-tutorials/Up-Running-Underscorejs/145117-2.html
+http://www.lynda.com/sdk/Web-Interaction-Design-tutorials/JavaScript-Templating/156166-2.html
+http://jquery.com/ jQuery Website
+http://jquerymobile.com/ jQuery Mobile Website
+http://jqueryui.com/ jQuery UI Website
 
 2015/01/23
 Initialized Git Repository

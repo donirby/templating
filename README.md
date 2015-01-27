@@ -4,10 +4,9 @@ This is a repository for developing JavaScript Templates. It is based on a lynda
 
 ## Instructions
 
-### Additional Resources
+### Resources
 [jQuery Website](http://jquery.com/)
 
 [jQuery Mobile Website](http://jquerymobile.com/)
 
 [jQuery UI Website](http://jqueryui.com/)
-
